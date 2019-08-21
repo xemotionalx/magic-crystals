@@ -21,107 +21,81 @@
 $(document).ready(function () {
 
     var game = {
-        //initialize:
         score: 0,
         wins: 0,
         losses: 0,
         magicNumber: Math.floor(Math.random() * 120 + 19),
         crystalNumbers: [],
-
-        //generate 4 random numbers btwn 1-12, push to crystalNumbers array, //update each crystal-# with random number
         randomNumber1to12: function () {
             for (i = 0; i < 4; i++) {
                 randomNumber = Math.floor(Math.random() * 12 + 1);
                 this.crystalNumbers.push(randomNumber);
             }
+        }, 
+        init: function() {
+            game.score = 0;
+            game.crystalNumbers = [];
+            game.randomNumber1to12();
+            game.magicNumber = Math.floor(Math.random() * 120 + 19);
+            $('#magic-number').text(game.magicNumber);
         },
-       
+        checkNumber: function() {
+            console.log(this.score);
+            if (game.score === game.magicNumber) {
+                ++game.wins;
+                $("#wins").text("Wins:" + game.wins);
+                game.init();
+            } else if (game.score > game.magicNumber) {
+                ++game.losses
+                $("#losses").text("Losses:" + game.losses);
+                game.init();
+            }
+        
+        }
+    
     };
 
     //Text - wins & losses
     $("#wins").text("Wins:" + game.wins);
     $("#losses").text("Losses:" + game.losses);
 
-    //update #magic-number text with random number
-    $('#magic-number').text(game.magicNumber);
+    
 
     //start game
-    init();
+    game.init();
+    game.checkNumber();
+    
     console.log(game.crystalNumbers);
 
     //onlick of any crystal, add corresponding number from the crystal array to the score, update score
-
     //crystal 0
     $("#crystal-0").on("click", function () {
         game.score += game.crystalNumbers[0];
-    
-        if (game.score === game.magicNumber) {
-            ++game.wins;
-            $("#wins").text("Wins:" + game.wins);
-        } else if (game.score > game.magicNumber) {
-            ++game.losses
-            $("#losses").text("Losses:" + game.losses);
-            init();
-        }
-
+        game.checkNumber();
         $("#score").text(game.score);
     });
 
     //crystal 1
     $("#crystal-1").on("click", function () {
         game.score += game.crystalNumbers[1];
-
-        if (game.score === game.magicNumber) {
-            ++game.wins;
-            $("#wins").text("Wins:" + game.wins);
-        } else if (game.score > game.magicNumber) {
-            ++game.losses
-            $("#losses").text("Losses:" + game.losses);
-            init();
-        };
-
         $("#score").text(game.score);
+        game.checkNumber();
     });
 
     //crystal 2
     $("#crystal-2").on("click", function () {
         game.score += game.crystalNumbers[2];
-
-        if (game.score === game.magicNumber) {
-            ++game.wins;
-            $("#wins").text("Wins:" + game.wins);
-        } else if (game.score > game.magicNumber) {
-            ++game.losses
-            $("#losses").text("Losses:" + game.losses);
-            init();
-        };
-
         $("#score").text(game.score);
+        game.checkNumber();
     });
 
     //crystal 3
     $("#crystal-3").on("click", function () {
         game.score += game.crystalNumbers[3];
-
-        if (game.score === game.magicNumber) {
-            ++game.wins;
-            init();
-            $("#wins").text("Wins:" + game.wins);
-        } else if (game.score > game.magicNumber) {
-            ++game.losses
-            init();
-            $("#losses").text("Losses:" + game.losses);
-        };
-
         $("#score").text(game.score);
+        game.checkNumber();
     });
 
-
-    function init() {
-        game.score = 0;
-        game.crystalNumbers = [];
-        game.randomNumber1to12();
-};
 
 
 });
