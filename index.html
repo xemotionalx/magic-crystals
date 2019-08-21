@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JQuery & Javascript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+
+    <title>Magic Crystals</title>
+</head>
+
+<body>
+
+    <div class="container col-8">
+
+            <h1>Magic Crystals</h1>
+
+        <div class="row" id="instructions">
+            <ul>
+                <li> Click on the crystals to add points.</li>
+                <li> Win: if your score matches the magic number.</li>
+                <li> Lose: if your score goes over the magic number.</li>
+            </ul>
+        </div>
+
+        <div class="row">
+
+            <div class="col-6" id="magic-number-box">
+                Magic Number:
+                <div id="magic-number">
+                34
+            </div>
+            </div>
+
+            <div class="col-6" id="wins-losses">
+                You Win!
+                <div class="row col-6" id="wins"></div> 
+                <div class="row col-6" id="losses"></div>
+            </div>
+        </div>
+
+        <div class="row"  id="magic-crystals">
+            <img class="crystal-img" id="crystal-0" src="assets/images/crystal-1.png">
+            <img class="crystal-img" id="crystal-1" src="assets/images/crystal-2.jpg">
+            <img class="crystal-img" id="crystal-2" src="assets/images/crystal-3.jpg">
+            <img class="crystal-img" id="crystal-3" src="assets/images/crystal-4.png">
+            
+
+        </div>
+
+        
+           
+                <div class="row col-6 mx-auto score-box">
+                    Your Score
+                </div>
+
+                <div class="row col-6 mx-auto score-box" id="score">
+                    
+                </div>
+         
+   
+
+    </div>
+    
+</body>
+
+</html>

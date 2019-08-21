@@ -1,0 +1,34 @@
+body {
+    background-color: lightcyan;
+}
+
+#magic-number-box {
+    background-color: goldenrod;
+    
+}
+
+#magic-number {
+    font-size: 2em;
+}
+
+#wins-losses {
+    font-size: 1em;
+    background-color: mintcream;
+   
+}
+
+#magic-crystals {
+    background-color: white;   
+}
+
+.crystal-img {
+    height: 150px;
+}
+
+.score-box {
+    background-color: rgba(215, 238, 233, 0.671);
+}
+
+#score{
+    font-size: 2em;
+}
