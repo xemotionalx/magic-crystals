@@ -44,10 +44,12 @@ $(document).ready(function () {
             if (game.score === game.magicNumber) {
                 ++game.wins;
                 $("#wins").text("Wins:" + game.wins);
+                $("#win-or-lose").text("You Win!");
                 game.init();
             } else if (game.score > game.magicNumber) {
                 ++game.losses
                 $("#losses").text("Losses:" + game.losses);
+                $("#win-or-lose").text("You Lose!");
                 game.init();
             }
         
@@ -58,8 +60,6 @@ $(document).ready(function () {
     //Text - wins & losses
     $("#wins").text("Wins:" + game.wins);
     $("#losses").text("Losses:" + game.losses);
-
-    
 
     //start game
     game.init();
@@ -95,7 +95,5 @@ $(document).ready(function () {
         $("#score").text(game.score);
         game.checkNumber();
     });
-
-
 
 });
